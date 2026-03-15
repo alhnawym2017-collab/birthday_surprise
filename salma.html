@@ -2,184 +2,156 @@
 <html>
 <head>
 <title>Happy Birthday Salma 🎉</title>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("96isSZef8FuHKGU-o");
+})();
+</script>
+
 <style>
-/* ===== الخلفية المتدرجة المتحركة ===== */
+
 body{
-    margin:0;
-    font-family:'Arial', sans-serif;
-    text-align:center;
-    color:white;
-    overflow:hidden;
-    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-    background-size: 800% 800%;
-    animation: gradientBG 15s ease infinite;
+margin:0;
+font-family:Arial;
+text-align:center;
+color:white;
+overflow:hidden;
+
+background: linear-gradient(270deg,#ff9a9e,#fad0c4,#a18cd1,#fbc2eb);
+background-size:800% 800%;
+animation:gradientBG 15s ease infinite;
 }
 
 @keyframes gradientBG{
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-/* نصوص واضحة على الخلفية المتحركة */
-h1, #name, #msg{
-    color: white; /* لون ثابت */
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.7); /* ظل للنصوص */
+h1,#name,#msg{
+text-shadow:2px 2px 10px black;
 }
 
-/* ===== العنوان ===== */
 h1{
-    margin-top:70px;
-    font-size:60px;
-    animation:glow 2s infinite alternate;
-}
-@keyframes glow{
-    from{ text-shadow:0 0 10px pink;}
-    to{ text-shadow:0 0 40px red;}
+margin-top:70px;
+font-size:60px;
 }
 
-/* ===== العناصر المهمة ===== */
-#name, #msg, #cake, .gift{
-    position: relative;
-    z-index:20;
-}
-
-/* الاسم */
 #name{
-    font-size:55px;
-    margin-top:20px;
-    display:none;
+font-size:55px;
+margin-top:20px;
+display:none;
 }
 
-/* الهديه */
 .gift{
-    font-size:120px;
-    cursor:pointer;
-    margin-top:40px;
+font-size:120px;
+cursor:pointer;
+margin-top:40px;
 }
 
-/* الرسالة */
 #msg{
-    font-size:28px;
-    display:none;
-    margin-top:20px;
-    white-space:pre-wrap;
+font-size:28px;
+display:none;
+margin-top:20px;
+white-space:pre-wrap;
 }
 
-/* الكيكة */
 #cake{
-    font-size:120px;
-    display:none;
-    cursor:pointer;
-    margin-top:20px;
+font-size:120px;
+display:none;
+cursor:pointer;
+margin-top:20px;
 }
 
-/* البالونات */
-.balloon{
-    position:absolute;
-    bottom:-150px;
-    font-size:40px;
-    z-index:15;
-    display:none;
+#wishBox{
+display:none;
+margin-top:20px;
+z-index:30;
+position:relative;
 }
 
-/* القلوب */
-.heart{
-    position:absolute;
-    font-size:25px;
-    z-index:15;
-    display:none;
+#wishText{
+padding:12px;
+font-size:18px;
+border-radius:10px;
+border:none;
+width:260px;
 }
 
-/* confetti */
-.confetti{
-    position:absolute;
-    width:10px;
-    height:10px;
-    background-color:red;
-    z-index:30;
-    pointer-events:none;
-    opacity:0.8;
-    border-radius:50%;
+#wishBtn{
+padding:10px 25px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#ff4da6;
+color:white;
+cursor:pointer;
 }
 
-/* الألعاب النارية */
-canvas{
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
-    background: transparent; /* شفاف */
+#wishMessage{
+display:none;
+font-size:28px;
+margin-top:20px;
 }
 
-/* ===== واجهة الباسورد ===== */
 #password-screen{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: rgba(0,0,0,0.6);
-    z-index:50;
-    flex-direction: column;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,0.7);
+z-index:50;
+flex-direction:column;
 }
 
 #password-box{
-    background: rgba(255,255,255,0.1);
-    padding:40px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-#password-box h2{
-    color:white;
-    margin-bottom:20px;
-    text-shadow:2px 2px 8px black;
+background:rgba(255,255,255,0.1);
+padding:40px;
+border-radius:15px;
 }
 
 #password-box input{
-    padding:10px 20px;
-    font-size:18px;
-    border-radius:8px;
-    border:none;
-    outline:none;
-    margin-bottom:15px;
+padding:10px 20px;
+font-size:18px;
+border-radius:8px;
+border:none;
 }
 
 #password-box button{
-    padding:10px 25px;
-    font-size:18px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background: #ff5fa2;
-    color:white;
-    box-shadow:0 0 10px black;
-    transition: transform 0.2s;
+padding:10px 25px;
+font-size:18px;
+border:none;
+border-radius:8px;
+background:#ff5fa2;
+color:white;
+cursor:pointer;
 }
 
-#password-box button:hover{
-    transform: scale(1.1);
-}
 </style>
 </head>
+
 <body>
 
-<!-- واجهة الباسورد -->
 <div id="password-screen">
-    <div id="password-box">
-        <h2>ادخل كلمة السر لفتح المفاجأة 🎁</h2>
-        <input type="password" id="user-pass" placeholder="كلمة السر">
-        <br>
-        <button onclick="checkPassword()">Enter</button>
-    </div>
-</div>
+<div id="password-box">
 
-<canvas id="fireworks"></canvas>
+<h2>ادخل كلمة السر لفتح المفاجأة 🎁</h2>
+
+<input type="password" id="user-pass">
+
+<br><br>
+
+<button onclick="checkPassword()">Enter</button>
+
+</div>
+</div>
 
 <h1>🎉 Happy Birthday 🎉</h1>
 
@@ -191,177 +163,139 @@ canvas{
 
 <div id="cake" onclick="blow()">🎂</div>
 
+<div id="wishBox">
+
+<h2>✨ Write your birthday wish ✨</h2>
+
+<input id="wishText" placeholder="Type your wish here...">
+
+<br><br>
+
+<button id="wishBtn" onclick="sendWish()">Send Wish 💌</button>
+
+</div>
+
+<div id="wishMessage">
+✨ Your wish has been sent ❤️ ✨
+</div>
+
 <audio id="music" src="birthday_song.mp3"></audio>
-<audio id="applause" src="https://www.soundjay.com/human/applause-01.mp3"></audio>
-
-<!-- البالونات -->
-<div class="balloon" style="left:10%">🎈</div>
-<div class="balloon" style="left:30%">🎈</div>
-<div class="balloon" style="left:50%">🎈</div>
-<div class="balloon" style="left:70%">🎈</div>
-<div class="balloon" style="left:90%">🎈</div>
-
-<!-- القلوب -->
-<div class="heart" style="left:20%">❤️</div>
-<div class="heart" style="left:40%">❤️</div>
-<div class="heart" style="left:60%">❤️</div>
-<div class="heart" style="left:80%">❤️</div>
 
 <script>
-// ===== الباسورد =====
-const password = "1632006";
+
+const password="1632006";
 
 function checkPassword(){
-    let input = document.getElementById("user-pass").value;
-    if(input === password){
-        document.getElementById("password-screen").style.display = "none";
-        document.querySelector(".gift").style.display = "block"; // تظهر الهديه بعد الباسورد
-    } else {
-        alert("كلمة السر غلط! حاول تاني 😅");
-    }
+
+let input=document.getElementById("user-pass").value;
+
+if(input===password){
+
+document.getElementById("password-screen").style.display="none";
+
+}else{
+
+alert("كلمة السر غلط");
+
 }
 
-// ===== نص رومانسي =====
-let romanticText = `عيد ميلاد أجمل حاجة حصلتلي في حياتي ❤️
+}
 
-النهارده مش يوم عادي… ده اليوم اللي الدنيا نورت فيه علشان تنور حياتي بعدها. وجودك معايا مش صدفة، ده نعمة بشكر ربنا عليها كل يوم.
+let romanticText=`عيد ميلاد أجمل حاجة حصلتلي في حياتي ❤️
+Happy Birthday Salma ❤️`;
 
-كل سنة وإنتِ قريبة مني كده، وضحكتك مالية حياتي، وقلبك مطمني مهما الدنيا لفت بينا.
-كل سنة وإنتِ روحي اللي بتهدى لما أكون تايه، وأماني اللي بحس بيها حتى من غير كلام.
+let iName=0;
+let iMsg=0;
 
-أتمنى سنتك الجديدة تكون مليانة فرح قد ما بتفرحيني، ونجاح قد ما تفخري بيا، وحب قد ما قلبي شايله ليكي.
-وأهم أمنية ليا في يومك ده… إنك تفضلي دايمًا جنبي، ونكبر سوا سنة ورا سنة ❤️
-
-عيد ميلاد سعيد يا أجمل هدية في عمري 🎂✨`;
-
-let iName = 0;
-let iMsg = 0;
-
-// ===== كتابة الاسم حرف حرف =====
 function typeName(){
-    let nameDiv = document.getElementById("name");
-    let text = "❤️ SALMA ❤️";
-    if(iName<text.length){
-        nameDiv.innerHTML += text.charAt(iName);
-        iName++;
-        setTimeout(typeName,150);
-    }
+
+let nameDiv=document.getElementById("name");
+let text="❤️ SALMA ❤️";
+
+if(iName<text.length){
+
+nameDiv.innerHTML+=text.charAt(iName);
+
+iName++;
+
+setTimeout(typeName,150);
+
 }
 
-// ===== كتابة الرسالة حرف حرف =====
+}
+
 function typeMessage(){
-    let msgDiv = document.getElementById("msg");
-    if(iMsg<romanticText.length){
-        msgDiv.innerHTML += romanticText.charAt(iMsg);
-        iMsg++;
-        setTimeout(typeMessage,30);
-    }
+
+let msgDiv=document.getElementById("msg");
+
+if(iMsg<romanticText.length){
+
+msgDiv.innerHTML+=romanticText.charAt(iMsg);
+
+iMsg++;
+
+setTimeout(typeMessage,30);
+
 }
 
-// ===== توليد confetti =====
-function createConfetti(){
-    let confetti = document.createElement("div");
-    confetti.className = "confetti";
-    confetti.style.left = Math.random()*window.innerWidth + "px";
-    confetti.style.top = "-10px";
-    confetti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
-    document.body.appendChild(confetti);
-    let speed = 2 + Math.random()*3;
-    let rotation = Math.random()*360;
-    function fall(){
-        let top = parseFloat(confetti.style.top);
-        if(top < window.innerHeight){
-            confetti.style.top = top + speed + "px";
-            confetti.style.transform = `rotate(${rotation}deg)`;
-            requestAnimationFrame(fall);
-        } else {
-            confetti.remove();
-        }
-    }
-    fall();
 }
 
-// ===== بدء كل شيء بعد الضغط على الهديه 🎁 =====
 function openGift(){
-    document.querySelector(".gift").style.display="none";
-    document.getElementById("cake").style.display="block";
-    document.getElementById("music").play();
-    document.getElementById("name").style.display="block";
-    document.getElementById("msg").style.display="block";
 
-    typeName();
-    typeMessage();
+document.querySelector(".gift").style.display="none";
 
-    // البالونات والقلوب
-    document.querySelectorAll(".balloon").forEach(b=>{
-        b.style.display="block";
-        function animateBalloon(){
-            let colors = ["#ff6b6b","#feca57","#48dbfb","#1dd1a1","#ff9ff3"];
-            b.style.color = colors[Math.floor(Math.random()*colors.length)];
-            b.style.bottom = "-150px";
-            b.style.transition = "bottom 8s linear";
-            b.style.bottom = window.innerHeight + "px";
-            setTimeout(animateBalloon, 8000);
-        }
-        animateBalloon();
-    });
-    document.querySelectorAll(".heart").forEach(h=>{
-        h.style.display="block";
-        h.style.animation = `heartmove ${3+Math.random()*3}s linear infinite`;
-        h.style.animationDelay = Math.random()*3 + "s";
-    });
+document.getElementById("cake").style.display="block";
 
-    // الألعاب النارية
-    setInterval(firework,800);
+document.getElementById("music").play();
 
-    // confetti
-    setInterval(createConfetti,200);
-    document.getElementById("applause").play();
+document.getElementById("name").style.display="block";
+
+document.getElementById("msg").style.display="block";
+
+typeName();
+
+typeMessage();
+
 }
 
-// ===== نفخ الشموع =====
 function blow(){
-    document.getElementById("cake").innerHTML="🎂✨";
-    alert("Make a wish Salma 🎉");
+
+document.getElementById("cake").innerHTML="🎂✨";
+
+document.getElementById("wishBox").style.display="block";
+
 }
 
-// ===== الألعاب النارية =====
-const canvas=document.getElementById("fireworks");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-let particles=[];
+function sendWish(){
 
-function firework(){
-    let x=Math.random()*canvas.width;
-    let y=Math.random()*canvas.height/2;
-    for(let i=0;i<50;i++){
-        particles.push({
-            x:x,
-            y:y,
-            dx:(Math.random()-0.5)*6,
-            dy:(Math.random()-0.5)*6,
-            life:100
-        });
-    }
+let wish=document.getElementById("wishText").value;
+
+if(wish.trim()===""){
+
+alert("Write your wish first 😊");
+
+return;
+
 }
 
-function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach((p,index)=>{
-        p.x+=p.dx;
-        p.y+=p.dy;
-        p.life--;
-        ctx.fillStyle="hsl("+Math.random()*360+",100%,50%)";
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,3,0,Math.PI*2);
-        ctx.fill();
-        if(p.life<=0) particles.splice(index,1);
-    });
-    requestAnimationFrame(animate);
+emailjs.send("Mo7amed","template_cxwjth4",{
+
+wish_message:wish
+
+}).then(function(){
+
+document.getElementById("wishBox").style.display="none";
+
+document.getElementById("wishMessage").style.display="block";
+
+},function(){
+
+alert("Error sending wish");
+
+});
+
 }
 
-animate();
 </script>
 
 </body>
