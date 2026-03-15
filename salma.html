@@ -161,9 +161,12 @@ let opened=false;
 
 // كلمة السر
 function checkPassword(){
-  let input=document.getElementById("user-pass").value.trim(); // trim يحذف المسافات قبل وبعد
-  const password="1632006";
-  if(input===password){
+  let input = document.getElementById("user-pass").value
+                .replace(/\s+/g,'') // إزالة أي مسافات داخل الكلمة
+                .replace(/[\u200B-\u200D\uFEFF]/g,''); // إزالة أي invisible characters
+  const password = "1632006";
+  
+  if(input === password){
     document.getElementById("password-screen").style.display="none";
     document.querySelector(".phone").style.display="block";
   }else{
